@@ -27,3 +27,4 @@ Problem | File
 96A     | codeforces/football.c
 1165B   | codeforces/polycarptraining.c
 58A     | codeforces/chatroom.c
+158B    | codeforces/taxi.c
