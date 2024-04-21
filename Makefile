@@ -3,14 +3,23 @@
 CC=gcc
 FLAGS=-Wall -Wextra
 
-.PRECIOUS: bin/%
-bin/%: codeforces/%.c
+# {{{
+
+.PRECIOUS: bin/codeforces/%
+bin/codeforces/%: codeforces/%.c
+	mkdir -p bin/codeforces
 	$(CC) $(FLAGS) $< -o $@
 
 .PHONY: %
-%: bin/%
+codeforces/%: bin/codeforces/%
 	$<
+
+# }}}
+
+# {{{
 
 .PHONY: clean
 clean:
-	rm bin/*
+	rm -r bin/*
+
+# }}}

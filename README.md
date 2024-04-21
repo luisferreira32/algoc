@@ -11,7 +11,7 @@ We follow the C way here.
 
 For example, to run the Code forces problem 96A "Football" utilize the make target:
 ```bash
-$ make football
+$ make codeforces/football
 ```
 
 ## Code forces
