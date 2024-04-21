@@ -26,3 +26,4 @@ Problem | File
 282A    | codeforces/bitplusplus.c
 96A     | codeforces/football.c
 1165B   | codeforces/polycarptraining.c
+58A     | codeforces/chatroom.c
