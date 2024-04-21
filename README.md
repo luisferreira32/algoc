@@ -10,3 +10,4 @@ Problem | File
 ------- | ----
 4A      | codeforces/watermelon.c
 71A     | codeforces/watermelon.c
+231A    | codeforces/team.c
