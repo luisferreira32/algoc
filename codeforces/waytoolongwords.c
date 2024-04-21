@@ -3,12 +3,12 @@
 
 int main()
 {
-    int num, len;
+    int i, num, len;
     char buffer[102]; // 1 to 100 characters + \n + \0
 
     scanf("%d\n", &num);
 
-    for (size_t i = 0; i < num; i++)
+    for (i = 0; i < num; i++)
     {
         fgets(buffer, 102, stdin);
         len = strlen(buffer);

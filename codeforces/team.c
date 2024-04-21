@@ -2,12 +2,12 @@
 
 int main()
 {
-    int num;
+    int i, num;
+    int sol[3], numsol = 0;
 
     scanf("%d", &num);
 
-    int sol[3], numsol = 0;
-    for (size_t i = 0; i < num; i++)
+    for (i = 0; i < num; i++)
     {
         scanf("%d %d %d", &sol[0], &sol[1], &sol[2]);
         if (sol[0] + sol[1] + sol[2] > 1)
