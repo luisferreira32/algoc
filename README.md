@@ -16,6 +16,8 @@ $ make football
 
 ## Code forces
 
+Submissions for the problem set in: [codeforces.com/problemset](https://codeforces.com/problemset)
+
 Problem | File
 ------- | ----
 4A      | codeforces/watermelon.c
@@ -23,3 +25,4 @@ Problem | File
 231A    | codeforces/team.c
 282A    | codeforces/bitplusplus.c
 96A     | codeforces/football.c
+1165B   | codeforces/polycarptraining.c
