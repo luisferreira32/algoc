@@ -7,7 +7,6 @@ FLAGS=-Wall -Wextra
 
 .PRECIOUS: bin/codeforces/%
 bin/codeforces/%: codeforces/%.c
-	mkdir -p bin/codeforces
 	$(CC) $(FLAGS) $< -o $@
 
 .PHONY: %

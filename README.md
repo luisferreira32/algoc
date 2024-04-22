@@ -29,3 +29,4 @@ Problem | File
 58A     | codeforces/chatroom.c
 158B    | codeforces/taxi.c
 270A    | codeforces/fancyfence.c
+466A    | codeforces/cheaptravel.c
