@@ -40,3 +40,4 @@ Problem | File
 466A    | cheaptravel.c
 1520D   | samedifferences.c
 327A    | flippinggame.c
+327B    | hungrysequence.c
