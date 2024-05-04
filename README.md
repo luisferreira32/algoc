@@ -39,3 +39,4 @@ Problem | File
 270A    | fancyfence.c
 466A    | cheaptravel.c
 1520D   | samedifferences.c
+327A    | flippinggame.c
