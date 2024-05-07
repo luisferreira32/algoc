@@ -41,3 +41,4 @@ Problem | File
 1520D   | samedifferences.c
 327A    | flippinggame.c
 327B    | hungrysequence.c
+1272C   | yetanotherbrokenkeyboard.c
