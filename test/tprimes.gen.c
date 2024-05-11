@@ -3,16 +3,18 @@
 int main(int argc, char *argv[])
 {
     const size_t maxlen = 100;
-    const int static_testsetlen = 2;
+    const int static_testsetlen = 3;
 
     const char *static_inputs[] = {
         "3\n4 5 6\n",
         "3\n9 10 1\n",
+        "1\n999966000289\n",
     };
 
     const char *static_outputs[] = {
         "YES\nNO\nNO\n",
         "YES\nNO\nNO\n",
+        "YES\n",
     };
 
     char infn[maxlen], outfn[maxlen];

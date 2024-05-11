@@ -2,6 +2,7 @@
 
 CC=gcc
 FLAGS=-Wall -Wextra
+DEBUGFLAGS=-Wall -Wextra -g
 
 # {{{
 
@@ -13,11 +14,18 @@ bin/%: %.c
 %: bin/%
 	$<
 
-.PRECIOUS: bin/%_gen
-bin/%_gen: test/%_gen.c
+.PHONY: dbg%
+dbg%: bin/%.debug
+	gdb $<
+
+bin/%.debug: %.c
+	$(CC) $(DEBUGFLAGS) -g $< -o $@
+
+.PRECIOUS: bin/%.gen
+bin/%.gen: test/%.gen.c
 	$(CC) $(FLAGS) $< -o $@
 
-in/%: bin/%_gen
+in/%: bin/%.gen
 	$< $@
 
 out/%: in/%
