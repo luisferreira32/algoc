@@ -2,15 +2,15 @@
 
 set -xe
 
-IN_GLOB="$1"
-OUT_GLOB="$2"
-
-IFS="/" read -r -a tmp_arr <<< "$IN_GLOB"
-
-EXEC_FILENAME="bin/${tmp_arr[1]}"
+EXEC_FILENAME="$1"
+IN_GLOB="$2"
+OUT_GLOB="$3"
 
 for INPUT in "$IN_GLOB"*.inp.*; do
   EXPECTED_OUTPUT=${INPUT//".inp."/".out."}
-  valgrind --log-file="${INPUT//$IN_GLOB/$OUT_GLOB}.valgrind.logs" $EXEC_FILENAME < "$INPUT" > "${INPUT//$IN_GLOB/$OUT_GLOB}"
-  diff "${INPUT//$IN_GLOB/$OUT_GLOB}" "$EXPECTED_OUTPUT"
+  OUTPUT_FILE=${INPUT//$IN_GLOB/$OUT_GLOB}
+  valgrind \
+    --log-file="$OUTPUT_FILE.valgrind.logs" \
+    ./"$EXEC_FILENAME" < "$INPUT" > "$OUTPUT_FILE"
+  diff "$OUTPUT_FILE" "$EXPECTED_OUTPUT"
 done

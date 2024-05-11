@@ -6,30 +6,31 @@ DEBUGFLAGS=-Wall -Wextra -g
 
 # {{{
 
-.PRECIOUS: bin/%
-bin/%: %.c
+.SECONDARY:
+
+%.bin: %.c
 	$(CC) $(FLAGS) $< -o $@
 
-.PHONY: %
-%: bin/%
-	$<
+.PHONY: r%
+r%: %.bin
+	./$<
 
-.PHONY: dbg%
-dbg%: bin/%.debug
-	gdb $<
-
-bin/%.debug: %.c
+%.debug.bin: %.c
 	$(CC) $(DEBUGFLAGS) -g $< -o $@
 
-.PRECIOUS: bin/%.gen
-bin/%.gen: test/%.gen.c
+.PHONY: d%
+d%: %.debug.bin
+	gdb $<
+
+%.gen.bin: test/%.gen.c
 	$(CC) $(FLAGS) $< -o $@
 
-in/%: bin/%.gen
-	$< $@
+in/%: %.gen.bin
+	./$< $@
 
-out/%: in/%
-	./_runner.sh $< $@
+.PHONY: t%
+t%: in/% %.bin
+	./_runner.sh "$*.bin" "in/$*" "out/$*"
 
 # }}}
 
