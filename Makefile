@@ -53,5 +53,6 @@ clean:
 	rm -rf bin/*
 	rm -rf out/*
 	rm -rf in/*
+	rm *.bin
 
 # }}}

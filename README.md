@@ -43,3 +43,4 @@ Problem | File
 327B    | hungrysequence.c
 1272C   | yetanotherbrokenkeyboard.c
 230B    | tprimes.c
+1335D   | antisudoku.c
