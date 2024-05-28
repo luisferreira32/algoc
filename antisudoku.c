@@ -3,60 +3,50 @@
 
 int main()
 {
-    int t, num, i, j, diagonal, it_block_diagonal;
-    char buff[11], board[81], block_diagonal[3];
+    int t, num, index, row;
+    unsigned char antisudoku[9] = {0, 13, 26, 28, 41, 51, 56, 66, 79};
+    char buff[11], board[81];
 
     scanf("%d\n", &num);
 
     for (t = 0; t < num; t++)
     {
         // read
-        for (j = 0; j < 9; j++)
+        for (row = 0; row < 9; row++)
         {
             fgets(buff, 11, stdin);
-            memcpy((void *)&board[j * 9], (void *)buff, 9);
+            memcpy((void *)&board[row * 9], (void *)buff, 9);
         }
 
-        // swap diagonal values to ensure we get the proper anti-sudoku
-        diagonal = -1;
-        it_block_diagonal = 0;
-        for (i = 0; i < 81; i++)
+        // swap the dot values to ensure a proper anti-sudoku
+        // .xx   xxx   xxx
+        // xxx   x.x   xxx
+        // xxx   xxx   xx.
+        //
+        // x.x   xxx   xxx
+        // xxx   xx.   xxx
+        // xxx   xxx   .xx
+        //
+        // xx.   xxx   xxx
+        // xxx   .xx   xxx
+        // xxx   xxx   x.x
+        for (index = 0; index < 9; index++)
         {
-            if (i % 9 == 0)
+            // 1, 9 ASCII == 49, 57
+            if (board[antisudoku[index]] == 57)
             {
-                // line beginning, set diagonal index (== line number)
-                diagonal++;
+                board[antisudoku[index]] = 49;
             }
-
-            if (i % 9 == diagonal)
+            else
             {
-                if (diagonal % 3 == 0)
-                {
-                    // reset the block [0, 1, 2], [3, 4, 5], etc.
-                    it_block_diagonal = 0;
-                }
-
-                block_diagonal[it_block_diagonal] = board[i];
-                it_block_diagonal++;
-
-                for (j = 0; j < it_block_diagonal; j++)
-                {
-                    // TODO: change the diagonal value
-                }
+                board[antisudoku[index]]++;
             }
         }
 
-        for (i = 0; i < 81; i++)
+        for (row = 0; row < 81; row += 9)
         {
-            if (i % 9 == 0 && i != 0) // skip first newline
-            {
-                printf("\n");
-            }
-
-            printf("%c", board[i]);
+            printf("%.*s\n", 9, &board[row]);
         }
-
-        printf("\n");
     }
     return 0;
 }
