@@ -22,15 +22,12 @@ r%: %.bin
 d%: %.debug.bin
 	gdb $<
 
-%.gen.bin: test/%.gen.c
+%.jury.bin: test/%.jury.c
 	$(CC) $(FLAGS) $< -o $@
 
-in/%: %.gen.bin
-	./$< $@
-
 .PHONY: t%
-t%: in/% %.bin
-	./_runner.sh "$*.bin" "in/$*" "out/$*"
+t%: %.jury.bin %.bin
+	./$*.jury.bin $*.bin
 
 # }}}
 
@@ -42,16 +39,11 @@ in:
 bin:
 	mkdir -p bin
 
-out:
-	mkdir -p out
-
 .PHONY: setup
-setup: bin out in
+setup: bin in
 
 .PHONY: clean
 clean:
-	rm -rf bin/*
-	rm -rf out/*
 	rm -rf in/*
 	rm *.bin
 
