@@ -33,18 +33,9 @@ t%: %.jury.bin %.bin
 
 # {{{
 
-in:
-	mkdir -p in
-
-bin:
-	mkdir -p bin
-
-.PHONY: setup
-setup: bin in
 
 .PHONY: clean
 clean:
-	rm -rf in/*
 	rm *.bin
 
 # }}}
