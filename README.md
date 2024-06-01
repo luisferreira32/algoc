@@ -44,3 +44,4 @@ Problem | File
 1272C   | yetanotherbrokenkeyboard.c
 230B    | tprimes.c
 1335D   | antisudoku.c
+520B    | twobuttons.c
