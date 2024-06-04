@@ -24,24 +24,25 @@ $ make out/football
 
 ## Code forces
 
-Submissions for the problem set in: [codeforces.com/problemset](https://codeforces.com/problemset)
+Submissions for the problem set in: [codeforces.com/problemset/](https://codeforces.com/problemset/)
 
-Problem | File
-------- | ----
-4A      | watermelon.c
-71A     | watermelon.c
-231A    | team.c
-282A    | bitplusplus.c
-96A     | football.c
-1165B   | polycarptraining.c
-58A     | chatroom.c
-158B    | taxi.c
-270A    | fancyfence.c
-466A    | cheaptravel.c
-1520D   | samedifferences.c
-327A    | flippinggame.c
-327B    | hungrysequence.c
-1272C   | yetanotherbrokenkeyboard.c
-230B    | tprimes.c
-1335D   | antisudoku.c
-520B    | twobuttons.c
+Problem          | File
+---------------- | ----
+problem/4/A      | watermelon.c
+problem/71/A     | watermelon.c
+problem/231/A    | team.c
+problem/282/A    | bitplusplus.c
+problem/96/A     | football.c
+problem/1165/B   | polycarptraining.c
+problem/58/A     | chatroom.c
+problem/158/B    | taxi.c
+problem/270/A    | fancyfence.c
+problem/466/A    | cheaptravel.c
+problem/1520/D   | samedifferences.c
+problem/327/A    | flippinggame.c
+problem/327/B    | hungrysequence.c
+problem/1272/C   | yetanotherbrokenkeyboard.c
+problem/230/B    | tprimes.c
+problem/1335/D   | antisudoku.c
+problem/520/B    | twobuttons.c
+problem/479/C    | exams.c
