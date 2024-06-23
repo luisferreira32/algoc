@@ -7,3 +7,5 @@ tmp/
 .vscode/
 .idea/
 .TODO
+*.so
+*.a

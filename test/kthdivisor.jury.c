@@ -10,16 +10,18 @@
 
 int main(int argc, char *argv[])
 {
-    const int static_testsetlen = 2;
-
+    const int static_testsetlen = 4;
     const char *static_inputs[] = {
-        "3\n5 2\n3 1\n4 2\n",
-        "5\n4 3\n4 2\n4 1\n4 1\n4 1\n",
+        "4 2\n",
+        "5 3\n",
+        "12 5\n",
+        "1000000000000000 1000000000\n",
     };
-
     const char *static_outputs[] = {
         "2\n",
-        "3\n",
+        "-1\n",
+        "6\n",
+        "-1\n",
     };
 
     if (argc < 2)

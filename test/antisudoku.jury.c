@@ -6,6 +6,8 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+// TODO: use the shared jury once the FIXME of reading output is done
+
 int main(int argc, char *argv[])
 {
     const int static_testsetlen = 1;

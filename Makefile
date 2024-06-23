@@ -6,8 +6,10 @@ DEBUGFLAGS=-Wall -Wextra -g
 
 # {{{
 
-.SECONDARY:
+libjury.so: test/internal/
+	$(CC) $(FLAGS) -fPIC -Wl,-rpath,$$ORIGIN -shared -o libjury.so test/internal/jury.c
 
+.SECONDARY:
 %.bin: %.c
 	$(CC) $(FLAGS) $< -o $@
 
@@ -22,12 +24,12 @@ r%: %.bin
 d%: %.debug.bin
 	gdb $<
 
-%.jury.bin: test/%.jury.c
-	$(CC) $(FLAGS) $< -o $@
+%.jury.bin: test/%.jury.c libjury.so
+	$(CC) $(FLAGS) $< -L. -ljury -o $@
 
 .PHONY: t%
 t%: %.jury.bin %.bin
-	./$*.jury.bin $*.bin
+	LD_LIBRARY_PATH=. ./$*.jury.bin $*.bin
 
 # }}}
 
@@ -36,6 +38,6 @@ t%: %.jury.bin %.bin
 
 .PHONY: clean
 clean:
-	rm *.bin
+	rm *.bin *.so
 
 # }}}

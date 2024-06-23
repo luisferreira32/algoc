@@ -46,3 +46,4 @@ problem/230/B    | tprimes.c
 problem/1335/D   | antisudoku.c
 problem/520/B    | twobuttons.c
 problem/479/C    | exams.c
+problem/762/A    | kthdivisor.c
