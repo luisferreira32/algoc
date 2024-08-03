@@ -12,14 +12,14 @@ To run a test solution you only need to run `make <problem_name>`. This will run
 
 For example, to run the Code forces problem 96A "Football" utilize the make target:
 ```bash
-$ make football
+$ make rfootball
 ```
 
 There are also automated tests constructed based on the problem statements. To run those tests for a certain problem, you only need to run `make out/<problem_name>`.
 
 For example, to run automated tests for the Code forces problem 96A "Football" utilize the make target:
 ```bash
-$ make out/football
+$ make tfootball
 ```
 
 ## Code forces
